@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-research-space | Sign Up</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+    <link href="/index.html" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+<style>
+
+
+
+
+    .emoji {
+      font-family: 'Noto Color Emoji', sans-serif;
+    }
+    
+    .signup-container {
+      display: flex;
+      flex-direction: column;
+      margin-inline: auto;
+      min-height: 100vh;
+      max-width: 1140px;
+      padding: 40px;
+      width: 100%;
+    }
+    
+    .signup {
+      background-color: white;
+    }
+    
+    /* Student-research-space - Signup header */
+    .signup-header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .signup-header__link {
+      align-items: center;
+      display: flex;
+    }
+    
+    .back-arrow-icon {
+      background-color: #fff;
+      border: 1px solid lightgray;
+      border-radius: 6px;
+      display: inline-block;
+      margin-right: 10px;
+      padding: 8px 12px;
+    }
+    
+     /* Signup main */
+    .signup-main {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      padding-top: 50px
+    }
+    
+    .signup-main__left {
+      flex: 50%;
+      padding-right: 80px;
+    }
+    
+    .signup-main__title {
+      font-size: 1.9rem;
+      line-height: 1.3;
+      margin-bottom: 30px;
+    }
+    
+    .signup-main__left-stack {
+      display: flex;
+    }
+    
+    .signup-main__left-stack:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    
+    /* .signup-main__right {
+      flex: 50%;
+    } */
+    
+    .signup-main__copy {
+      margin-left: 10px;
+    }
+    
+    .signup-main__form {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 50px
+    }
+    
+    .signup-main__form-title {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    
+    .signup-main__form-stack {
+      margin-bottom: 30px;
+    }
+    
+    .signup-main__input-email,
+    .signup-main__input-text,
+    .signup-main__input-password {
+      border: 1px solid lightgray;
+      border-radius: 6px;
+      display: block;
+      height: 50px;
+      margin-top: 5px;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .signup-main__form-link {
+      color: #664efc;
+      text-decoration: underline;
+    }
+    
+    .signup-main__form-link:visited {
+      color: #664efc;
+    }
+    
+    .signup-main__submit-btn {
+      background-color: #664efc;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      height: 50px;
+      padding: 0 15px;
+      transition: background-color .3s;
+      width: 100%;
+    }
+    
+    .signup-main__submit-btn:visited {
+      color: #fff;
+    }
+    
+    .signup-main__submit-btn:hover {
+      background-color: #8471fc;
+    }
+    
+    @media (max-width: 991px) {
+      .signup-main {
+        flex-wrap: wrap;
+    }
+      .signup-main__left,
+      .signup-main__right {
+        flex: 100%;
+      }
+    
+      .signup-main__left {
+        padding-right: 0;
+      }
+    
+      .signup-main__form {
+        margin-top: 30px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .signup-container {
+        padding: 40px 20px;
+      }
+      
+      .signup-main__title {
+        font-size: 1.7rem;
+      }
+      
+      .signup-main__form {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 30px 20px;
+      }
+      
+      .signup-main__form-title {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .back-home-text {
+        position: absolute;
+        left: -999px;
+      }
+    }
+
+
+    
+ .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+}
+
+.form:hover {
+  transform: scale(1.05);
+  border: 1px solid black;
+}
+
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2.5em;
+}
+
+.button1 {
+  padding: 0.5em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 5px;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #0898E7;
+  color: white;
+}
+
+.button1:hover {
+  background-color: rgba(8, 152, 231, 0.7);
+  color: white;
+}
+
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #0898E7;
+  color: white;
+}
+
+.button2:hover {
+  background-color: rgba(8, 152, 231, 0.7);;
+  color: white;
+}
+
+.button3 {
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button3:hover {
+  background-color: red;
+  color: white;
+}
+
+
+  </style>
+    
+    
+    
+    
+    
+    
+    
+    
+
+  </head>
+
+  <div id="home" class="header-hero bg_cover d-lg-flex align-items-center">
+            
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+    <div class="shape shape-6"></div>
+
+  <body class="signup">
+
+   
+
+    <div class="signup-container">
+      <header class="signup-header">
+        <a href="signup.html" class="signup-header__link">
+          <img src="assets\images\stslogo.png" alt="Site logo" class="Site-logo"  width="250px" height="50px">
+        </a>
+        <a href="index.html" class="signup-header__link">
+          <img src="back-arrow.svg" alt="" class="back-arrow-icon">
+          <span class="back-home-text font-bold">Back to homepage</span>
+        </a>
+      </header>
+      
+      <main class="signup-main">
+        <div class="signup-main__left">
+          <h1 class="signup-main__title">Create your personalized feed.</h1>
+          <div class="signup-main__left-stack">
+            <span class="emoji">🎈</span>
+            <p class="signup-main__copy"><span class="font-bold">Over 20 resources.</span> With resources ranging from Reddit to IndieHackers, we've got all your needs covered.</p>
+          </div>
+          <div class="signup-main__left-stack">
+            <span class="emoji">🗞️</span>
+            <p class="signup-main__copy"><span class="font-bold">Real-time Chat</span> Every week at exactly Tuesday 12:00 P.M. EST - expect a value-packed digest right in your email.</p>
+          </div>
+          <div class="signup-main__left-stack">
+            <span class="emoji">💡</span>
+            <p class="signup-main__copy"><span class="font-bold">Unlimited ideas.</span> With all the ideas   you'll be reading about, what's stopping you from creating a sustainable startup?</p>
+          </div>
+        </div>
+        <div class="signup-main__right">
+         
+
+          <form class="form">
+            <p id="heading">Login</p>
+            <div class="field">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
+            </svg>
+              <input autocomplete="off" placeholder="Username" class="input-field" type="text">
+            </div>
+            <div class="field">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+            </svg>
+              <input placeholder="Password" class="input-field" type="password">
+            </div>
+            <div class="btn">
+            <button class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button class="button2">Sign Up</button>
+            </div>
+            <button class="button3">Forgot Password</button>
+        </form>
+        </div>
+      </main>
+    </div>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
