@@ -33,6 +33,11 @@
     <!-- Feedback Card Css-->
 
     <link href="rating.css" rel="stylesheet">
+
+     <!-- Font Awesome-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -91,9 +96,26 @@
                                     <li class="nav-item">
                                         <a class="page-scroll" href="projects.html">Upload projects</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="page-scroll" href="#screenshots">Notification</a>
+                                    </li> -->
+                                    <li class="nav-item dropdown">
+                                        <a class="page-scroll dropdown-toggle" href="#" id="notificationDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Notifications
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="notificationDropdown">
+                                            <!-- Notifications will be dynamically inserted here -->
+                                        </div>
                                     </li>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+
                                     <!-- <li class="nav-item">
                                         <a class="page-scroll" href="#pricing">Pricing</a>
                                     </li>
@@ -405,9 +427,9 @@
             <main class="main">
                 <div class="row">
                     <div class="intro">
-                        <h1>10,000+ of our users love our products.</h1>
-                        <p> We only provide great products combined with excellent customer service. See what our
-                            satisfied customers are saying about our services.
+                        <h1>10,000+ of our users love our platform.</h1>
+                        <p> We only provide great contribution combined with excellent  services. See what our
+                            satisfied Students are saying about our platform.
                         </p>
 
                     </div><!-- Introduction -->
@@ -692,6 +714,70 @@
                 }
             }
         });
+                       /*   NOTIFICATION FEATURE JS  */
+
+        // Sample notifications with date and time//
+let notifications = [
+{ id: 1, initials: 'JD', username: 'John Doe', message: 'New message from John', timestamp: new Date() },
+        { id: 2, initials: 'JS', username: 'Jane Smith', message: 'System update available', timestamp: new Date() },
+        { id: 3, initials: 'MK', username: 'Mark Kelly', message: 'Meeting  for tomorrow', timestamp: new Date() }
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+    const notificationDropdown = document.querySelector("#notificationDropdown");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    function formatDate(timestamp) {
+        const date = new Date(timestamp);
+        return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+    }
+
+    function renderNotifications() {
+        dropdownMenu.innerHTML = `
+            <h6 class="dropdown-header">Notifications</h6>
+            ${notifications.map((notification, index) => `
+                <a class="dropdown-item" href="#">
+                    <div class="notification-content">
+                        <div class="profile-picture">${notification.initials}</div>
+                        <div class="notification-details">
+                            <div class="username">${notification.username}</div>
+                            <div class="message">${notification.message}</div>
+                            <div class="timestamp">${formatDate(notification.timestamp)}</div>
+                        </div>
+                        <button class="delete-btn" data-id="${notification.id}">&times;</button>
+                    </div>
+                </a>
+            `).join('')}
+        `;
+    }
+
+    function deleteNotification(id) {
+        notifications = notifications.filter(notification => notification.id !== id);
+        renderNotifications();
+    }
+
+    dropdownMenu.addEventListener("click", function (event) {
+        if (event.target.classList.contains("delete-btn")) {
+            event.stopPropagation(); // Prevent dropdown from closing
+            const id = parseInt(event.target.getAttribute("data-id"), 10);
+            deleteNotification(id);
+        }
+    });
+
+    renderNotifications();
+
+    notificationDropdown.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dropdownMenu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!notificationDropdown.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+        }
+    });
+});
 
 
     </script>
